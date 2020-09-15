@@ -1,3 +1,4 @@
+# NOTE: for versions >= 5 (for python 3.4+) see python3-ipykernel.spec
 #
 # Conditional build:
 %bcond_without	doc	# Sphinx documentation
@@ -8,6 +9,7 @@
 Summary:	IPython kernel for Jupyter
 Summary(pl.UTF-8):	Jądro IPythona dla Jupytera
 Name:		python-ipykernel
+# keep 4.x here for python2 support
 Version:	4.10.1
 Release:	3
 License:	BSD
@@ -18,11 +20,11 @@ Source0:	https://files.pythonhosted.org/packages/source/i/ipykernel/ipykernel-%{
 Patch0:		%{name}-use_setuptools.patch
 URL:		https://pypi.org/project/ipykernel/
 %if %{with python2}
+BuildRequires:	python-jupyter_client
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-ipython >= 4.0.0
-BuildRequires:	python-jupyter_client
 BuildRequires:	python-mock
 BuildRequires:	python-nose
 BuildRequires:	python-pytest
@@ -32,11 +34,12 @@ BuildRequires:	python-tornado >= 4.0
 %endif
 %endif
 %if %{with python3}
+BuildRequires:	python3-jupyter_client
 BuildRequires:	python3-modules >= 1:3.4
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-ipython >= 4.0.0
-BuildRequires:	python3-jupyter_client
+BuildRequires:	python3-jupyter_client < 6
 BuildRequires:	python3-nose
 BuildRequires:	python3-pytest
 BuildRequires:	python3-pytest-cov
