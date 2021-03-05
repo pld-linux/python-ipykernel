@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Jądro IPythona dla Jupytera
 Name:		python-ipykernel
 # keep 4.x here for python2 support
 Version:	4.10.1
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/ipykernel/
