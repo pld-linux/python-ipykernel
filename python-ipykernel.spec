@@ -89,7 +89,7 @@ Dokumentacja API modułu Pythona ipykernel.
 
 %prep
 %setup -q -n ipykernel-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %if %{with python2}
