@@ -97,6 +97,7 @@ Dokumentacja API modułu Pythona ipykernel.
 
 %if %{with tests}
 # test_oinfo_detail test requires ipython source code
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 PYTHONPATH=$(pwd) \
 %{__python} -m pytest -k 'not test_oinfo_detail' ipykernel
 %endif
